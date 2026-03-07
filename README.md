@@ -1,53 +1,10 @@
 # PT Mesin Packing - Landing Page
 
-Landing page profesional untuk perusahaan mesin packing otomatis dengan desain modern menggunakan HTML, Tailwind CSS, dan JavaScript vanilla.
+Landing page untuk perusahaan mesin packing otomatis.
 
-## 📁 Struktur Folder
+## Cara Membuka
 
-```
-packing/
-├── index.html                  # File HTML utama (clean & modular)
-├── assets/
-│   ├── css/
-│   │   └── styles.css         # Custom CSS & animations
-│   └── js/
-│       └── script.js          # JavaScript interaktif
-└── README.md                  # Dokumentasi ini
-```
-
-## 📄 File-File
-
-### `index.html`
-- File HTML utama yang clean dan semantic
-- Menggunakan Tailwind CSS CDN
-- Link ke custom CSS dan JavaScript
-- Struktur: Navigation, Hero, About, Products, Features, Testimonials, CTA, Footer
-
-### `assets/css/styles.css`
-Custom styles termasuk:
-- Gradient backgrounds (hero & accent)
-- Animations (countUp, underline)
-- Hover effects untuk cards & buttons  
-- Icon styles
-- Smooth scroll behavior
-
-### `assets/js/script.js`
-Fitur interaktif:
-- Smooth scroll untuk navigation links
-- Navbar shadow effect saat scroll
-- Counter animation untuk statistics
-- Button CTA actions
-- Intersection Observer untuk lazy animations
-
-## 🚀 Cara Membuka
-
-1. Buka file `index.html` dengan browser favorit Anda
-2. Semua resource (Tailwind CSS, font) diload dari CDN, tidak perlu install apapun
-
-## 🎨 Fitur
-
-✅ Responsive Design (mobile, tablet, desktop)
-✅ Modern UI dengan gradient colors
+Buka `index.html` dengan browser Anda.
 ✅ Smooth animations & transitions
 ✅ Interactive elements (smooth scroll, hover effects)
 ✅ Statistics counter animations
