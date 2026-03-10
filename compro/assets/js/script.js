@@ -106,3 +106,34 @@ document.querySelectorAll('#mobile-menu a').forEach(link => {
 window.addEventListener('load', () => {
     document.body.style.opacity = '1';
 });
+
+// IntersectionObserver: fade-in setiap section saat masuk viewport
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('section-visible');
+            sectionObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('section').forEach(sec => {
+    sec.classList.add('section-fade');
+    sectionObserver.observe(sec);
+});
+
+// IntersectionObserver: lazy-load background images (data-bg)
+const bgObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const el = entry.target;
+            if (el.dataset.bg) {
+                el.style.backgroundImage = el.dataset.bg;
+                delete el.dataset.bg;
+            }
+            bgObserver.unobserve(el);
+        }
+    });
+}, { rootMargin: '200px' });
+
+document.querySelectorAll('[data-bg]').forEach(el => bgObserver.observe(el));

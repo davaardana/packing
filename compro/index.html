@@ -18,10 +18,13 @@
     <meta name="twitter:title" content="Mesin Packing Otomatis | CV Abdi Jaya Teknik">
     <meta name="twitter:description" content="Distributor mesin packing otomatis terpercaya di Indonesia.">
     <meta name="twitter:image" content="https://mesinpackingotomatis.com/assets/images/logo_ajt.jpeg">
+    <link rel="preload" as="image" href="assets/images/logo_ajt.jpeg">
+    <link rel="preload" as="style" href="assets/css/styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800;900&display=swap">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="bg-white text-gray-900">
@@ -31,7 +34,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center gap-3">
-                    <img src="assets/images/logo_ajt.jpeg" alt="Logo CV Abdi Jaya Teknik" class="h-12 w-12 rounded-lg object-contain border border-gray-200 bg-white p-0.5">
+                    <img src="assets/images/logo_ajt.jpeg" alt="Logo CV Abdi Jaya Teknik" class="h-14 w-auto object-contain" fetchpriority="high">
                     <div class="text-xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
                         Abdi Jaya Teknik
                     </div>
@@ -41,7 +44,7 @@
                     <a href="#tentang" class="text-gray-700 hover:text-blue-600 transition">Tentang</a>
                     <a href="#produk" class="text-gray-700 hover:text-blue-600 transition">Mesin</a>
                     <a href="#makanan" class="text-gray-700 hover:text-blue-600 transition">Makanan</a>
-                    <a href="#keunggulan" class="text-gray-700 hover:text-blue-600 transition">Keunggulan</a>
+                    <a href="#keunggulan" class="text-gray-700 hover:text-blue-600 transition">Pelayanan</a>
                     <a href="#lokasi" class="text-gray-700 hover:text-blue-600 transition">Lokasi</a>
                     <a href="#kontak" class="text-gray-700 hover:text-blue-600 transition">Kontak</a>
                 </div>
@@ -61,7 +64,7 @@
                     <a href="#tentang" class="text-gray-700 hover:text-blue-600 transition py-1">Tentang</a>
                     <a href="#produk" class="text-gray-700 hover:text-blue-600 transition py-1">Mesin</a>
                     <a href="#makanan" class="text-gray-700 hover:text-blue-600 transition py-1">Makanan</a>
-                    <a href="#keunggulan" class="text-gray-700 hover:text-blue-600 transition py-1">Keunggulan</a>
+                    <a href="#keunggulan" class="text-gray-700 hover:text-blue-600 transition py-1">Pelayanan</a>
                     <a href="#lokasi" class="text-gray-700 hover:text-blue-600 transition py-1">Lokasi</a>
                     <a href="#kontak" class="text-gray-700 hover:text-blue-600 transition py-1">Kontak</a>
                     <a href="#kontak" class="btn-primary text-white px-4 py-2 rounded-lg font-semibold text-center mt-2">Hubungi Kami</a>
@@ -71,24 +74,23 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="gradient-hero text-white pt-32 pb-20 px-4">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                        Solusi <span class="text-blue-400">Packing Otomatis</span> Terbaik untuk Bisnis Anda
-                    </h1>
-                    <p class="text-lg text-gray-300 mb-8 leading-relaxed">
-                        Tingkatkan produktivitas hingga 300% dengan mesin packing otomatis berkualitas tinggi. Tepat untuk kemasan snack, bumbu, beras, pakan, dan lebih banyak lagi.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#produk" class="btn-primary text-white px-8 py-4 rounded-lg font-bold text-lg inline-block text-center">
-                            Lihat Katalog Mesin
-                        </a>
-                        <a href="https://wa.me/6282138538244" target="_blank" rel="noopener noreferrer" class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-blue-900 transition inline-block text-center">
-                            💬 Hubungi Kami
-                        </a>
-                    </div>
+    <section id="home" class="gradient-hero text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 py-32 md:py-44 relative z-10">
+            <div class="max-w-3xl">
+                <span class="hero-badge">⚡ Pengalaman 10+ Tahun di Industri Kemasan</span>
+                <h1 class="text-5xl md:text-6xl font-black mb-6 leading-tight mt-5">
+                    Mesin Packing <span class="hero-highlight">Otomatis</span><br>Terbaik untuk Bisnis Anda
+                </h1>
+                <p class="text-lg mb-10 leading-relaxed max-w-xl" style="color: rgba(255,255,255,0.85);">
+                    CV Abdi Jaya Teknik menyediakan mesin pengemas vertical otomatis berkualitas tinggi. Melayani dengan sepenuh hati, free ongkir seluruh Pulau Jawa.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#produk" class="hero-btn-primary px-8 py-4 rounded-full font-bold text-lg inline-block text-center">
+                        🏭 Lihat Katalog Mesin
+                    </a>
+                    <a href="https://wa.me/6282138538244" target="_blank" rel="noopener noreferrer" class="hero-btn-outline px-8 py-4 rounded-full font-bold text-lg inline-block text-center">
+                        💬 Hubungi Kami
+                    </a>
                 </div>
             </div>
         </div>
@@ -132,7 +134,7 @@
                     </div>
                 </div>
                 <div class="hidden md:flex items-center justify-center">
-                    <img src="assets/images/logo_ajt.jpeg" alt="CV Abdi Jaya Teknik" class="w-64 h-64 object-contain rounded-2xl border-4 border-blue-200 shadow-xl bg-white p-4">
+                    <img src="assets/images/logo_ajt.jpeg" alt="CV Abdi Jaya Teknik" class="w-64 h-64 object-contain rounded-2xl border-4 border-blue-200 shadow-xl bg-white p-4" loading="lazy" decoding="async">
                 </div>
             </div>
         </div>
@@ -142,78 +144,235 @@
     <section id="produk" class="py-20 px-4">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">Lini <span class="underline-animated">Produk</span> Kami</h2>
-                <p class="text-xl text-gray-600">Berbagai pilihan mesin sesuai kebutuhan bisnis Anda</p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Katalog <span class="underline-animated">Produk</span> Kami</h2>
+                <p class="text-xl text-gray-600">Mesin pengemas vertical otomatis untuk berbagai jenis produk</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Produk 1 -->
-                <div class="card-hover bg-white rounded-2xl overflow-hidden border-2 border-gray-100">
-                    <div class="h-48 overflow-hidden bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
-                        <div class="text-white text-center">
-                            <div class="text-4xl font-bold">📦</div>
-                            <p class="text-lg font-semibold mt-2">PACKING-1000</p>
-                        </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- 1 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+                    <div class="h-16 bg-gradient-to-r from-blue-700 to-blue-900 flex items-center px-6">
+                        <span class="text-white font-bold text-base">Mesin Pengemas Pupuk</span>
                     </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-3">PACKING-1000</h3>
-                        <p class="text-gray-600 mb-6">Mesin packing entry-level untuk usaha kecil dan menengah</p>
-                        <div class="space-y-2 mb-6">
-                            <p class="text-sm"><strong>Kapasitas:</strong> 50-100 kemasan/menit</p>
-                            <p class="text-sm"><strong>Cocok untuk:</strong> Snack, bumbu, biji-bijian</p>
-                            <p class="text-sm"><strong>Harga:</strong> Terjangkau</p>
-                        </div>
-                        <a href="#kontak" class="block w-full btn-primary text-white py-3 rounded-lg font-bold text-center">
-                            Tanya Harga &amp; Spesifikasi
-                        </a>
+                    <div class="p-5 space-y-1.5 text-sm text-gray-600">
+                        <p>🕒 Kecepatan: 20-45 kemasan/menit</p>
+                        <p>⚖️ Kapasitas: hingga 500 gram</p>
+                        <p>📏 Dimensi: 100 x 100 x 200 cm</p>
+                        <p>⚡ Daya: 1.300 watt</p>
+                    </div>
+                    <div class="px-5 pb-5">
+                        <a href="#kontak" class="block w-full btn-primary text-white py-2.5 rounded-lg font-semibold text-center text-sm">Tanya Harga &amp; Spesifikasi</a>
                     </div>
                 </div>
 
-                <!-- Produk 2 -->
-                <div class="card-hover bg-white rounded-2xl overflow-hidden border-2 border-blue-300 relative">
-                    <div class="absolute top-0 right-0 bg-gradient-to-r from-blue-600 to-blue-800 text-white px-4 py-2 rounded-bl-xl font-bold">
-                        POPULER
+                <!-- 2 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+                    <div class="h-16 bg-gradient-to-r from-blue-700 to-blue-900 flex items-center px-6">
+                        <span class="text-white font-bold text-base">Mesin Pengemas Tepung</span>
                     </div>
-                    <div class="h-48 overflow-hidden bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center">
-                        <div class="text-white text-center">
-                            <div class="text-4xl font-bold">⚙️</div>
-                            <p class="text-lg font-semibold mt-2">PACKING-3000</p>
-                        </div>
+                    <div class="p-5 space-y-1.5 text-sm text-gray-600">
+                        <p>🕒 Kecepatan: 20-45 kemasan/menit</p>
+                        <p>⚖️ Kapasitas: hingga 500 gram</p>
+                        <p>📏 Dimensi: 100 x 100 x 200 cm</p>
+                        <p>⚡ Daya: 1.300 watt</p>
                     </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-3">PACKING-3000</h3>
-                        <p class="text-gray-600 mb-6">Mesin packing mid-range untuk produksi medium-large</p>
-                        <div class="space-y-2 mb-6">
-                            <p class="text-sm"><strong>Kapasitas:</strong> 200-300 kemasan/menit</p>
-                            <p class="text-sm"><strong>Cocok untuk:</strong> Beras, pakan, kacang</p>
-                            <p class="text-sm"><strong>Harga:</strong> Kompetitif</p>
-                        </div>
-                        <a href="#kontak" class="block w-full btn-primary text-white py-3 rounded-lg font-bold text-center">
-                            Tanya Harga &amp; Spesifikasi
-                        </a>
+                    <div class="px-5 pb-5">
+                        <a href="#kontak" class="block w-full btn-primary text-white py-2.5 rounded-lg font-semibold text-center text-sm">Tanya Harga &amp; Spesifikasi</a>
                     </div>
                 </div>
 
-                <!-- Produk 3 -->
-                <div class="card-hover bg-white rounded-2xl overflow-hidden border-2 border-gray-100">
-                    <div class="h-48 overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center">
-                        <div class="text-white text-center">
-                            <div class="text-4xl font-bold">🔧</div>
-                            <p class="text-lg font-semibold mt-2">PACKING-5000PRO</p>
-                        </div>
+                <!-- 3 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+                    <div class="h-16 bg-gradient-to-r from-blue-700 to-blue-900 flex items-center px-6">
+                        <span class="text-white font-bold text-base">Mesin Pengemas Madu</span>
                     </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-3">PACKING-5000PRO</h3>
-                        <p class="text-gray-600 mb-6">Mesin packing premium untuk produksi skala industri</p>
-                        <div class="space-y-2 mb-6">
-                            <p class="text-sm"><strong>Kapasitas:</strong> 500+ kemasan/menit</p>
-                            <p class="text-sm"><strong>Cocok untuk:</strong> Semua jenis produk</p>
-                            <p class="text-sm"><strong>Harga:</strong> Premium</p>
-                        </div>
-                        <a href="#kontak" class="block w-full btn-primary text-white py-3 rounded-lg font-bold text-center">
-                            Tanya Harga &amp; Spesifikasi
-                        </a>
+                    <div class="p-5 space-y-1.5 text-sm text-gray-600">
+                        <p>🕒 Kecepatan: 20-45 kemasan/menit</p>
+                        <p>⚖️ Kapasitas: hingga 50 gram</p>
+                        <p>📏 Dimensi: 100 x 100 x 200 cm</p>
+                        <p>⚡ Daya: 1.300 watt</p>
+                    </div>
+                    <div class="px-5 pb-5">
+                        <a href="#kontak" class="block w-full btn-primary text-white py-2.5 rounded-lg font-semibold text-center text-sm">Tanya Harga &amp; Spesifikasi</a>
                     </div>
                 </div>
+
+                <!-- 4 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+                    <div class="h-16 bg-gradient-to-r from-blue-700 to-blue-900 flex items-center px-6">
+                        <span class="text-white font-bold text-base">Mesin Pengemas Snack/Makanan Ringan</span>
+                    </div>
+                    <div class="p-5 space-y-1.5 text-sm text-gray-600">
+                        <p>🕒 Kecepatan: 20-50 kemasan/menit</p>
+                        <p>⚖️ Kapasitas: hingga 100 gram</p>
+                        <p>📏 Dimensi: 100 x 100 x 200 cm</p>
+                        <p>⚡ Daya: 1.300 watt</p>
+                    </div>
+                    <div class="px-5 pb-5">
+                        <a href="#kontak" class="block w-full btn-primary text-white py-2.5 rounded-lg font-semibold text-center text-sm">Tanya Harga &amp; Spesifikasi</a>
+                    </div>
+                </div>
+
+                <!-- 5 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+                    <div class="h-16 bg-gradient-to-r from-blue-700 to-blue-900 flex items-center px-6">
+                        <span class="text-white font-bold text-base">Mesin Pengemas Saus</span>
+                    </div>
+                    <div class="p-5 space-y-1.5 text-sm text-gray-600">
+                        <p>🕒 Kecepatan: 20-45 kemasan/menit</p>
+                        <p>⚖️ Kapasitas: hingga 50 gram</p>
+                        <p>📏 Dimensi: 100 x 100 x 200 cm</p>
+                        <p>⚡ Daya: 1.300 watt</p>
+                    </div>
+                    <div class="px-5 pb-5">
+                        <a href="#kontak" class="block w-full btn-primary text-white py-2.5 rounded-lg font-semibold text-center text-sm">Tanya Harga &amp; Spesifikasi</a>
+                    </div>
+                </div>
+
+                <!-- 6 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+                    <div class="h-16 bg-gradient-to-r from-blue-700 to-blue-900 flex items-center px-6">
+                        <span class="text-white font-bold text-base">Mesin Pengemas Pakan Ternak</span>
+                    </div>
+                    <div class="p-5 space-y-1.5 text-sm text-gray-600">
+                        <p>🕒 Kecepatan: 20-45 kemasan/menit</p>
+                        <p>⚖️ Kapasitas: hingga 500 gram</p>
+                        <p>📏 Dimensi: 100 x 100 x 200 cm</p>
+                        <p>⚡ Daya: 1.300 watt</p>
+                    </div>
+                    <div class="px-5 pb-5">
+                        <a href="#kontak" class="block w-full btn-primary text-white py-2.5 rounded-lg font-semibold text-center text-sm">Tanya Harga &amp; Spesifikasi</a>
+                    </div>
+                </div>
+
+                <!-- 7 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+                    <div class="h-16 bg-gradient-to-r from-blue-700 to-blue-900 flex items-center px-6">
+                        <span class="text-white font-bold text-base">Mesin Pengemas Bumbu Dapur/Tabur</span>
+                    </div>
+                    <div class="p-5 space-y-1.5 text-sm text-gray-600">
+                        <p>🕒 Kecepatan: 20-45 kemasan/menit</p>
+                        <p>⚖️ Kapasitas: hingga 500 gram</p>
+                        <p>📏 Dimensi: 100 x 100 x 200 cm</p>
+                        <p>⚡ Daya: 1.300 watt</p>
+                    </div>
+                    <div class="px-5 pb-5">
+                        <a href="#kontak" class="block w-full btn-primary text-white py-2.5 rounded-lg font-semibold text-center text-sm">Tanya Harga &amp; Spesifikasi</a>
+                    </div>
+                </div>
+
+                <!-- 8 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+                    <div class="h-16 bg-gradient-to-r from-blue-700 to-blue-900 flex items-center px-6">
+                        <span class="text-white font-bold text-base">Mesin Pengemas Roti</span>
+                    </div>
+                    <div class="p-5 space-y-1.5 text-sm text-gray-600">
+                        <p>🕒 Kecepatan: 20-45 kemasan/menit</p>
+                        <p>⚖️ Kapasitas: hingga 500 gram</p>
+                        <p>📏 Dimensi: 100 x 100 x 200 cm</p>
+                        <p>⚡ Daya: 1.300 watt</p>
+                    </div>
+                    <div class="px-5 pb-5">
+                        <a href="#kontak" class="block w-full btn-primary text-white py-2.5 rounded-lg font-semibold text-center text-sm">Tanya Harga &amp; Spesifikasi</a>
+                    </div>
+                </div>
+
+                <!-- 9 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+                    <div class="h-16 bg-gradient-to-r from-blue-700 to-blue-900 flex items-center px-6">
+                        <span class="text-white font-bold text-base">Mesin Pengemas Gula Stick</span>
+                    </div>
+                    <div class="p-5 space-y-1.5 text-sm text-gray-600">
+                        <p>🕒 Kecepatan: 20-45 kemasan/menit</p>
+                        <p>⚖️ Kapasitas: hingga 500 gram</p>
+                        <p>📏 Dimensi: 100 x 100 x 200 cm</p>
+                        <p>⚡ Daya: 1.300 watt</p>
+                    </div>
+                    <div class="px-5 pb-5">
+                        <a href="#kontak" class="block w-full btn-primary text-white py-2.5 rounded-lg font-semibold text-center text-sm">Tanya Harga &amp; Spesifikasi</a>
+                    </div>
+                </div>
+
+                <!-- 10 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+                    <div class="h-16 bg-gradient-to-r from-blue-700 to-blue-900 flex items-center px-6">
+                        <span class="text-white font-bold text-base">Mesin Pengemas Kecap</span>
+                    </div>
+                    <div class="p-5 space-y-1.5 text-sm text-gray-600">
+                        <p>🕒 Kecepatan: 20-45 kemasan/menit</p>
+                        <p>⚖️ Kapasitas: hingga 500 gram</p>
+                        <p>📏 Dimensi: 100 x 100 x 200 cm</p>
+                        <p>⚡ Daya: 1.300 watt</p>
+                    </div>
+                    <div class="px-5 pb-5">
+                        <a href="#kontak" class="block w-full btn-primary text-white py-2.5 rounded-lg font-semibold text-center text-sm">Tanya Harga &amp; Spesifikasi</a>
+                    </div>
+                </div>
+
+                <!-- 11 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+                    <div class="h-16 bg-gradient-to-r from-blue-700 to-blue-900 flex items-center px-6">
+                        <span class="text-white font-bold text-base">Mesin Pengemas Sambal Ulek</span>
+                    </div>
+                    <div class="p-5 space-y-1.5 text-sm text-gray-600">
+                        <p>🕒 Kecepatan: 20-45 kemasan/menit</p>
+                        <p>⚖️ Kapasitas: hingga 500 gram</p>
+                        <p>📏 Dimensi: 100 x 100 x 200 cm</p>
+                        <p>⚡ Daya: 1.300 watt</p>
+                    </div>
+                    <div class="px-5 pb-5">
+                        <a href="#kontak" class="block w-full btn-primary text-white py-2.5 rounded-lg font-semibold text-center text-sm">Tanya Harga &amp; Spesifikasi</a>
+                    </div>
+                </div>
+
+                <!-- 12 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+                    <div class="h-16 bg-gradient-to-r from-blue-700 to-blue-900 flex items-center px-6">
+                        <span class="text-white font-bold text-base">Mesin Pengemas Susu Bubuk</span>
+                    </div>
+                    <div class="p-5 space-y-1.5 text-sm text-gray-600">
+                        <p>🕒 Kecepatan: 20-45 kemasan/menit</p>
+                        <p>⚖️ Kapasitas: hingga 500 gram</p>
+                        <p>📏 Dimensi: 100 x 100 x 200 cm</p>
+                        <p>⚡ Daya: 1.300 watt</p>
+                    </div>
+                    <div class="px-5 pb-5">
+                        <a href="#kontak" class="block w-full btn-primary text-white py-2.5 rounded-lg font-semibold text-center text-sm">Tanya Harga &amp; Spesifikasi</a>
+                    </div>
+                </div>
+
+                <!-- 13 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+                    <div class="h-16 bg-gradient-to-r from-blue-700 to-blue-900 flex items-center px-6">
+                        <span class="text-white font-bold text-base">Mesin Pengemas Susu Cair Sachet</span>
+                    </div>
+                    <div class="p-5 space-y-1.5 text-sm text-gray-600">
+                        <p>🕒 Kecepatan: 20-45 kemasan/menit</p>
+                        <p>⚖️ Kapasitas: hingga 500 gram</p>
+                        <p>📏 Dimensi: 100 x 100 x 200 cm</p>
+                        <p>⚡ Daya: 1.300 watt</p>
+                    </div>
+                    <div class="px-5 pb-5">
+                        <a href="#kontak" class="block w-full btn-primary text-white py-2.5 rounded-lg font-semibold text-center text-sm">Tanya Harga &amp; Spesifikasi</a>
+                    </div>
+                </div>
+
+                <!-- 14 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+                    <div class="h-16 bg-gradient-to-r from-blue-700 to-blue-900 flex items-center px-6">
+                        <span class="text-white font-bold text-base">Mesin Pengemas Kopi Sachet</span>
+                    </div>
+                    <div class="p-5 space-y-1.5 text-sm text-gray-600">
+                        <p>🕒 Kecepatan: 20-45 kemasan/menit</p>
+                        <p>⚖️ Kapasitas: hingga 500 gram</p>
+                        <p>📏 Dimensi: 100 x 100 x 200 cm</p>
+                        <p>⚡ Daya: 1.300 watt</p>
+                    </div>
+                    <div class="px-5 pb-5">
+                        <a href="#kontak" class="block w-full btn-primary text-white py-2.5 rounded-lg font-semibold text-center text-sm">Tanya Harga &amp; Spesifikasi</a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -225,36 +384,36 @@
                 <h2 class="text-4xl md:text-5xl font-bold mb-4">Pelayanan <span class="underline-animated">Kami</span></h2>
                 <p class="text-xl text-gray-600">Komitmen kami dalam melayani setiap pelanggan dengan sepenuh hati</p>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <div class="text-center">
+            <div class="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
+                <div class="text-center w-64">
                     <div class="feature-icon">
                         <span class="text-4xl">🔒</span>
                     </div>
                     <h3 class="font-bold text-lg mb-2">Garansi Sparepart</h3>
                     <p class="text-gray-600">Suku cadang terjamin tersedia untuk menjaga mesin Anda tetap beroperasi optimal</p>
                 </div>
-                <div class="text-center">
+                <div class="text-center w-64">
                     <div class="feature-icon">
                         <span class="text-4xl">🎓</span>
                     </div>
                     <h3 class="font-bold text-lg mb-2">Free Mentoring</h3>
                     <p class="text-gray-600">Pelatihan dan pendampingan gratis untuk operator mesin hingga mahir</p>
                 </div>
-                <div class="text-center">
+                <div class="text-center w-64">
                     <div class="feature-icon">
                         <span class="text-4xl">🚚</span>
                     </div>
                     <h3 class="font-bold text-lg mb-2">Free Ongkir Pulau Jawa</h3>
                     <p class="text-gray-600">Pengiriman gratis ke seluruh wilayah Pulau Jawa tanpa biaya tambahan</p>
                 </div>
-                <div class="text-center">
+                <div class="text-center w-64">
                     <div class="feature-icon">
                         <span class="text-4xl">👨‍🔧</span>
                     </div>
                     <h3 class="font-bold text-lg mb-2">Teknisi Profesional</h3>
                     <p class="text-gray-600">Tim teknisi berpengalaman siap melayani instalasi dan perawatan mesin Anda</p>
                 </div>
-                <div class="text-center">
+                <div class="text-center w-64">
                     <div class="feature-icon">
                         <span class="text-4xl">🛠️</span>
                     </div>
@@ -421,7 +580,7 @@
                 <!-- Info Perusahaan -->
                 <div class="bg-white rounded-2xl p-8 shadow-md border border-gray-100">
                     <div class="flex items-center gap-4 mb-6">
-                        <img src="assets/images/logo_ajt.jpeg" alt="CV Abdi Jaya Teknik" class="h-20 w-20 rounded-xl object-contain border-2 border-blue-200 bg-white p-1">
+                        <img src="assets/images/logo_ajt.jpeg" alt="CV Abdi Jaya Teknik" class="h-20 w-20 rounded-xl object-contain border-2 border-blue-200 bg-white p-1" loading="lazy" decoding="async">
                         <div>
                             <h3 class="text-2xl font-bold text-blue-700">CV Abdi Jaya Teknik</h3>
                             <p class="text-gray-500 text-sm">Distributor Mesin Packing Otomatis</p>
@@ -486,7 +645,7 @@
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <div>
                     <div class="flex items-center gap-3 mb-4">
-                        <img src="assets/images/logo_ajt.jpeg" alt="CV Abdi Jaya Teknik" class="h-10 w-10 rounded-full object-cover">
+                        <img src="assets/images/logo_ajt.jpeg" alt="CV Abdi Jaya Teknik" class="h-10 w-10 rounded-full object-cover" loading="lazy" decoding="async">
                         <h3 class="text-xl font-bold text-blue-400">Abdi Jaya Teknik</h3>
                     </div>
                     <p class="text-gray-400">CV Abdi Jaya Teknik &ndash; Distributor mesin packing otomatis terpercaya di Indonesia.</p>
@@ -494,9 +653,10 @@
                 <div>
                     <h4 class="font-bold mb-4">Produk</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="#produk" class="hover:text-white transition">PACKING-1000</a></li>
-                        <li><a href="#produk" class="hover:text-white transition">PACKING-3000</a></li>
-                        <li><a href="#produk" class="hover:text-white transition">PACKING-5000PRO</a></li>
+                        <li><a href="#produk" class="hover:text-white transition">Mesin Pengemas Pupuk</a></li>
+                        <li><a href="#produk" class="hover:text-white transition">Mesin Pengemas Snack</a></li>
+                        <li><a href="#produk" class="hover:text-white transition">Mesin Pengemas Bumbu</a></li>
+                        <li><a href="#produk" class="hover:text-white transition">Lihat Semua &rarr;</a></li>
                     </ul>
                 </div>
                 <div>
@@ -544,6 +704,6 @@
         </div>
     </footer>
 
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/script.js" defer></script>
 </body>
 </html>
