@@ -1,0 +1,181 @@
+# ============================================================
+# mesinpackingotomatis.com - Security & Performance Config
+# ============================================================
+
+# ── Rewrite Engine (harus paling atas) ───────────────────────
+RewriteEngine On
+
+# ── HTTPS ENFORCEMENT (LiteSpeed compatible) ─────────────────
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ── BLOCK SENSITIVE FILES ─────────────────────────────────────
+RewriteRule ^\.git - [F,L]
+RewriteRule ^\.env - [F,L]
+RewriteRule ^\.htaccess - [F,L]
+RewriteRule ^sftp\.json - [F,L]
+RewriteRule ^deploy\.ps1 - [F,L]
+RewriteRule ^package\.json - [F,L]
+RewriteRule ^README - [F,L]
+
+# ── BLOCK SQL INJECTION ───────────────────────────────────────
+RewriteCond %{QUERY_STRING} (union.*select|select.*from|insert.*into|delete.*from|drop.*table|update.*set) [NC,OR]
+RewriteCond %{QUERY_STRING} (benchmark\(|load_file\(|outfile|into\s+dumpfile) [NC,OR]
+RewriteCond %{QUERY_STRING} (\%27|\'|\-\-|\%23|#) [NC]
+RewriteRule .* - [F,L]
+
+# ── BLOCK XSS ────────────────────────────────────────────────
+RewriteCond %{QUERY_STRING} (<script|<iframe|javascript:|vbscript:|onload=|onerror=) [NC,OR]
+RewriteCond %{QUERY_STRING} (document\.cookie|document\.write|window\.location) [NC]
+RewriteRule .* - [F,L]
+
+# ── BLOCK LFI/RFI ────────────────────────────────────────────
+RewriteCond %{QUERY_STRING} (\.\.\/|\.\.\\|%2e%2e%2f) [NC,OR]
+RewriteCond %{QUERY_STRING} (php://|data://|zip://|expect://) [NC]
+RewriteRule .* - [F,L]
+
+# ── BLOCK COMMAND INJECTION ───────────────────────────────────
+RewriteCond %{QUERY_STRING} (;|\||\$\(|`|\bexec\b|\bsystem\b|\bpassthru\b) [NC]
+RewriteRule .* - [F,L]
+
+# ── BLOCK BAD BOTS ───────────────────────────────────────────
+RewriteCond %{HTTP_USER_AGENT} (nikto|sqlmap|nmap|masscan|dirbuster|acunetix|havij|pangolin) [NC]
+RewriteRule .* - [F,L]
+
+# ── BLOCK DANGEROUS METHODS ──────────────────────────────────
+RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK|CONNECT) [NC]
+RewriteRule .* - [F,L]
+
+# ── DIRECTORY & INDEX ────────────────────────────────────────
+DirectoryIndex index.html index.htm
+Options -Indexes -MultiViews
+ServerSignature Off
+
+# ── SECURITY HEADERS ─────────────────────────────────────────
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    Header always unset X-Powered-By
+    Header unset X-Powered-By
+</IfModule>
+
+# ── BLOCK BACKUP & SENSITIVE FILE EXTENSIONS ─────────────────
+<FilesMatch "\.(bak|backup|log|sql|db|sqlite|tar|gz|zip|7z|rar)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# ── GZIP COMPRESSION ─────────────────────────────────────────
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css
+    AddOutputFilterByType DEFLATE application/javascript application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ── BROWSER CACHING ──────────────────────────────────────────
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/html "access plus 1 day"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+# ── CUSTOM ERROR PAGES ───────────────────────────────────────
+ErrorDocument 403 /index.html
+ErrorDocument 404 /index.html
+
+# ── SECURITY HEADERS ─────────────────────────────────────────
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+    Header always set Content-Security-Policy "default-src 'self' https: data:; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://fonts.googleapis.com https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:;"
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    # Hapus header yang bocorkan info server
+    Header unset X-Powered-By
+    Header unset Server
+</IfModule>
+
+# ── BLOCK SQL INJECTION ──────────────────────────────────────
+RewriteCond %{QUERY_STRING} (union.*select|select.*from|insert.*into|delete.*from|drop.*table|update.*set|exec\(|execute\() [NC,OR]
+RewriteCond %{QUERY_STRING} (benchmark\(|load_file\(|outfile|into\s+dumpfile) [NC,OR]
+RewriteCond %{QUERY_STRING} (\%27|\'|\-\-|\%23|#) [NC]
+RewriteRule .* - [F,L]
+
+# ── BLOCK XSS ATTACKS ────────────────────────────────────────
+RewriteCond %{QUERY_STRING} (<script|<iframe|javascript:|vbscript:|onload=|onerror=|onclick=) [NC,OR]
+RewriteCond %{QUERY_STRING} (document\.cookie|document\.write|window\.location) [NC]
+RewriteRule .* - [F,L]
+
+# ── BLOCK LOCAL/REMOTE FILE INCLUSION (LFI/RFI) ─────────────
+RewriteCond %{QUERY_STRING} (\.\.\/|\.\.\\|%2e%2e%2f|%2e%2e/) [NC,OR]
+RewriteCond %{QUERY_STRING} (ftp://|http://|https://) [NC,OR]
+RewriteCond %{QUERY_STRING} (php://|data://|zip://|expect://) [NC]
+RewriteRule .* - [F,L]
+
+# ── BLOCK COMMAND INJECTION ──────────────────────────────────
+RewriteCond %{QUERY_STRING} (;|\||&&|\$\(|`|\bexec\b|\bsystem\b|\bpassthru\b|\bshell_exec\b) [NC]
+RewriteRule .* - [F,L]
+
+# ── BLOCK BAD BOTS & SCANNERS ────────────────────────────────
+RewriteCond %{HTTP_USER_AGENT} (nikto|sqlmap|nmap|masscan|dirbuster|acunetix|nessus|openvas|w3af|burpsuite|havij|pangolin) [NC]
+RewriteRule .* - [F,L]
+
+# ── BLOCK SUSPICIOUS REQUEST METHODS ────────────────────────
+RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK|CONNECT|PATCH|DELETE|PUT) [NC]
+RewriteRule .* - [F,L]
+
+# ── BLOCK ACCESS TO SENSITIVE FILES ─────────────────────────
+<FilesMatch "(^\.htaccess|^\.htpasswd|^\.env|^\.git|wp-config\.php|config\.php|composer\.json|package\.json|sftp\.json|deploy\.ps1)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# ── BLOCK ACCESS TO BACKUP & LOG FILES ──────────────────────
+<FilesMatch "\.(bak|backup|log|sql|db|sqlite|tar|gz|zip|7z|rar)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# ── PREVENT HOTLINKING ───────────────────────────────────────
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^https://(www\.)?mesinpackingotomatis\.com [NC]
+RewriteRule \.(jpg|jpeg|png|gif|webp|svg|mp4)$ - [F,L]
+
+# ── GZIP COMPRESSION ─────────────────────────────────────────
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css
+    AddOutputFilterByType DEFLATE application/javascript application/json
+    AddOutputFilterByType DEFLATE image/svg+xml font/woff font/woff2
+</IfModule>
+
+# ── BROWSER CACHING ──────────────────────────────────────────
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/html "access plus 1 day"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+# ── CUSTOM ERROR PAGES ───────────────────────────────────────
+ErrorDocument 403 /index.html
+ErrorDocument 404 /index.html

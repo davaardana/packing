@@ -207,3 +207,12 @@ a[href*="wa.me"]:hover {
     color: #25D366;
     transition: color 0.3s ease;
 }
+
+/* Disable background-attachment: fixed on mobile (iOS Safari fix) */
+@media (max-width: 768px) {
+    .gradient-hero,
+    #home.gradient-hero,
+    #kontak.gradient-hero {
+        background-attachment: scroll;
+    }
+}

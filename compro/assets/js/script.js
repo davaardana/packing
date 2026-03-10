@@ -83,18 +83,22 @@ if (mobileMenuBtn) {
     });
 }
 
-// Button CTA actions
+// Button CTA actions (fallback for buttons without href/onclick)
 document.querySelectorAll('.btn-primary').forEach(btn => {
-    btn.addEventListener('click', function(e) {
-        const text = this.textContent.trim();
-        if (text.includes('Hubungi') || text.includes('Demo')) {
-            if (!this.getAttribute('onclick')) {
-                // Fallback jika onclick tidak ada
-                window.open('https://wa.me/628123456789', '_blank');
+    if (!btn.getAttribute('href') && !btn.getAttribute('onclick')) {
+        btn.addEventListener('click', function() {
+            const text = this.textContent.trim();
+            if (text.includes('Hubungi') || text.includes('Demo')) {
+                window.open('https://wa.me/6282138538244', '_blank', 'noopener,noreferrer');
             }
-        } else if (text.includes('Spesifikasi')) {
-            alert('Fitur detail produk akan ditampilkan di halaman detail produk');
-        }
+        });
+    }
+});
+
+// Close mobile menu when a nav link is clicked
+document.querySelectorAll('#mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById('mobile-menu').classList.add('hidden');
     });
 });
 
@@ -102,5 +106,3 @@ document.querySelectorAll('.btn-primary').forEach(btn => {
 window.addEventListener('load', () => {
     document.body.style.opacity = '1';
 });
-
-console.log('Landing Page Packing Pro loaded successfully with lazy loading!');
