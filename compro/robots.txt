@@ -1,5 +1,30 @@
 User-agent: *
 Allow: /
+Allow: /assets/
 Disallow: /cgi-bin/
+
+# Keamanan Ekstra: Cegah mesin pencari mengindeks file sensitif dan log cPanel
+Disallow: /readme.md
+Disallow: /sftp.json
+Disallow: /package.json
+Disallow: /deploy.ps1
+Disallow: /*.bak$
+Disallow: /*.sql$
+
+# Blokir Bot Scraper & AI/Spam Bot yang membuang bandwidth
+User-agent: AhrefsBot
+Disallow: /
+User-agent: SemrushBot
+Disallow: /
+User-agent: GPTBot
+Disallow: /
+User-agent: ChatGPT-User
+Disallow: /
+User-agent: CCBot
+Disallow: /
+User-agent: BLEXBot
+Disallow: /
+User-agent: MegaIndex.ru
+Disallow: /
 
 Sitemap: https://mesinpackingotomatis.com/sitemap.xml

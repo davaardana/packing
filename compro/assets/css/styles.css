@@ -238,9 +238,7 @@ h1, h2, h3, h4, h5 {
 /* Hero Section with Different Background Image */
 #home.gradient-hero {
     background-color: #0d1453;
-    background-image:
-        linear-gradient(135deg, rgba(13, 20, 83, 0.72) 0%, rgba(26, 35, 126, 0.60) 50%, rgba(40, 53, 147, 0.48) 100%),
-        url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1920&q=80');
+    background-image: linear-gradient(135deg, rgba(13, 20, 83, 0.78) 0%, rgba(26, 35, 126, 0.66) 50%, rgba(40, 53, 147, 0.56) 100%);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -353,8 +351,7 @@ h1, h2, h3, h4, h5 {
 /* CTA Section with Different Background Image */
 #kontak.gradient-hero {
     background-color: #1e3a8a;
-    background-image: linear-gradient(135deg, rgba(15, 23, 42, 0.5) 0%, rgba(30, 58, 138, 0.5) 100%),
-                      url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=600&fit=crop');
+    background-image: linear-gradient(135deg, rgba(15, 23, 42, 0.5) 0%, rgba(30, 58, 138, 0.5) 100%);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

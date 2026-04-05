@@ -1,9 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>https://mesinpackingotomatis.com/</loc>
-    <lastmod>2026-03-10</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-04-05T12:00:00+07:00</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://mesinpackingotomatis.com/assets/images/logo_ajt.jpeg</image:loc>
+      <image:title>Mesin Packing Otomatis CV Abdi Jaya Teknik</image:title>
+      <image:caption>Distributor mesin packing otomatis terpercaya</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://mesinpackingotomatis.com/produk/</loc>
+    <lastmod>2026-04-05T12:00:00+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://mesinpackingotomatis.com/produk/mesin-pengemas-pupuk.html</loc>
+    <lastmod>2026-04-05T12:00:00+07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://mesinpackingotomatis.com/assets/images/g5.jpeg</image:loc>
+      <image:title>Mesin Pengemas Pupuk Otomatis</image:title>
+      <image:caption>Mesin pengemas pupuk granular kapasitas hingga 500 gram</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://mesinpackingotomatis.com/produk/mesin-pengemas-tepung.html</loc>
+    <lastmod>2026-04-05T12:00:00+07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://mesinpackingotomatis.com/assets/images/g1.jpeg</image:loc>
+      <image:title>Mesin Pengemas Tepung Otomatis</image:title>
+      <image:caption>Mesin pengemas tepung dan produk bubuk dengan hasil rapi</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://mesinpackingotomatis.com/produk/mesin-pengemas-snack.html</loc>
+    <lastmod>2026-04-05T12:00:00+07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://mesinpackingotomatis.com/assets/images/g7.jpeg</image:loc>
+      <image:title>Mesin Pengemas Snack Otomatis</image:title>
+      <image:caption>Mesin pengemas snack/makanan ringan untuk kemasan retail</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://mesinpackingotomatis.com/produk/mesin-pengemas-roti-vertical.html</loc>
+    <lastmod>2026-04-05T12:00:00+07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://mesinpackingotomatis.com/assets/images/g8.jpeg</image:loc>
+      <image:title>Mesin Pengemas Roti Vertical</image:title>
+      <image:caption>Mesin pengemas roti type vertical untuk kebutuhan UMKM</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://mesinpackingotomatis.com/produk/mesin-pengemas-konveyor.html</loc>
+    <lastmod>2026-04-05T12:00:00+07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://mesinpackingotomatis.com/assets/images/g9.jpeg</image:loc>
+      <image:title>Mesin Pengemas dengan Konveyor</image:title>
+      <image:caption>Mesin pengemas serbaguna dengan sistem konveyor</image:caption>
+    </image:image>
   </url>
 </urlset>
